@@ -40,5 +40,9 @@ git delete -d <branch name>
 main ----> origin/main
 Staging Area --- Commit --- Push
 
+## Pulling the Latest Code
+Git Pull : This command pull the latest code from the remote repository
+
+
 
 ## Resolve Conflict
