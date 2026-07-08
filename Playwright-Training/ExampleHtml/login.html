@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f3;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      color: #1a1a1a;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4e4e0;
+      border-radius: 14px;
+      padding: 2.25rem 2.5rem;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .card-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: #f5f5f3;
+      border: 1px solid #e4e4e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #666;
+      font-size: 20px;
+    }
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1a1a1a;
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px;
+      font-size: 14px;
+      color: #1a1a1a;
+      background: #fff;
+      border: 1px solid #d8d8d4;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #555;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+    }
+
+    input::placeholder {
+      color: #bbb;
+    }
+
+    .password-wrap {
+      position: relative;
+    }
+
+    .password-wrap input {
+      padding-right: 40px;
+    }
+
+    .toggle-pw {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #aaa;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      transition: color 0.15s;
+    }
+
+    .toggle-pw:hover { color: #555; }
+
+    .submit-btn {
+      width: 100%;
+      height: 40px;
+      margin-top: 1.5rem;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      border: 1px solid #d8d8d4;
+      background: #1a1a1a;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s, opacity 0.2s, transform 0.1s;
+      font-family: inherit;
+    }
+
+    .submit-btn:not(:disabled):hover { background: #333; }
+    .submit-btn:not(:disabled):active { transform: scale(0.98); }
+
+    .submit-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      background: #1a1a1a;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #2e7d32;
+    }
+
+    .success-msg i { vertical-align: -2px; margin-right: 4px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-box" aria-hidden="true">
+        <i class="ti ti-lock"></i>
+      </div>
+      <p class="card-title">Sign in</p>
+      <p class="card-subtitle">Enter your credentials to continue</p>
+    </div>
+
+    <div class="field">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter username"
+        autocomplete="username"
+        oninput="checkFields()"
+      />
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <div class="password-wrap">
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+          oninput="checkFields()"
+        />
+        <button class="toggle-pw" onclick="togglePassword()" aria-label="Show password">
+          <i id="eye-icon" class="ti ti-eye" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <button id="login-btn" class="submit-btn" disabled onclick="handleLogin()">
+      <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      Log in
+    </button>
+
+    <p class="success-msg" id="success-msg">
+      <i class="ti ti-check"></i>
+      Login successful!
+    </p>
+  </div>
+
+  <script>
+    function checkFields() {
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      const btn = document.getElementById('login-btn');
+      const filled = u.length > 0 && p.length > 0;
+      btn.disabled = !filled;
+      document.getElementById('success-msg').style.display = 'none';
+    }
+
+    function togglePassword() {
+      const pw = document.getElementById('password');
+      const icon = document.getElementById('eye-icon');
+      const btn = document.querySelector('.toggle-pw');
+      if (pw.type === 'password') {
+        pw.type = 'text';
+        icon.className = 'ti ti-eye-off';
+        btn.setAttribute('aria-label', 'Hide password');
+      } else {
+        pw.type = 'password';
+        icon.className = 'ti ti-eye';
+        btn.setAttribute('aria-label', 'Show password');
+      }
+    }
+
+    function handleLogin() {
+      const btn = document.getElementById('login-btn');
+      if (btn.disabled) return;
+      document.getElementById('success-msg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

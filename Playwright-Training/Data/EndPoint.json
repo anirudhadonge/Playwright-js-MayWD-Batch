@@ -1,0 +1,4 @@
+{
+  "GetBookingIds": "/booking",
+  "CreateBooking": "/booking"
+}

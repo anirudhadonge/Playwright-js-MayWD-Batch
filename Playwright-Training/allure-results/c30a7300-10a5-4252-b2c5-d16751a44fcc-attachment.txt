@@ -1,0 +1,12 @@
+https://restful-booker.herokuapp.com/booking
+{
+  bookingid: 3523,
+  booking: {
+    firstname: 'Anirudha',
+    lastname: 'Donge',
+    totalprice: 1000,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-07-07', checkout: '2026-07-14' },
+    additionalneeds: 'Tea'
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "dev": {
+    "productName": "Blue Top"
+  },
+    "prod": {
+        "productName": "Tshirt"
+    }
+}

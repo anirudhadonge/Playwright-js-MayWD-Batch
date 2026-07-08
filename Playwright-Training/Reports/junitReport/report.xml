@@ -1,0 +1,63 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="47.715042999999994">
+<testsuite name="Hooks.spec.js" timestamp="2026-07-02T03:05:34.284Z" hostname="" tests="1" failures="0" skipped="0" time="45.895" errors="1">
+<testcase name="Fill test and select Options are in a group › Authencation test" classname="Hooks.spec.js" time="45.895">
+<system-out>
+<![CDATA[This is Before All Method
+This is After Each Method
+This is After All Method
+
+[[ATTACHMENT|..\..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\error-context.md]]
+
+[[ATTACHMENT|..\..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\error-context.md]]
+
+[[ATTACHMENT|..\..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded." type="Error">
+<![CDATA[  Hooks.spec.js:58:8 › Fill test and select Options are in a group › Authencation test › I click on Login button 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByText(' Login1').nth(1)
+
+
+      69 |
+      70 |     await test.step("I click on Login button", async () => {
+    > 71 |       await page.getByText(" Login1").nth(1).click();
+         |                                              ^
+      72 |     });
+      73 |
+      74 |     await test.step("The page should have 'Welcome to the Secure Area.'", async () => {
+        at C:\Users\adonge2d\source\Playwright-js-MayWD-Batch\Playwright-Training\tests\Hooks.spec.js:71:46
+        at C:\Users\adonge2d\source\Playwright-js-MayWD-Batch\Playwright-Training\tests\Hooks.spec.js:70:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\error-context.md
+
+    Error Context: ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\Hooks-Fill-test-and-select-7de8a-n-a-group-Authencation-test\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>
