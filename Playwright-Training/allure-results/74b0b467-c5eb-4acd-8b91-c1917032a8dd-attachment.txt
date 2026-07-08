@@ -1,3 +1,0 @@
-This is Before All Method
-This is After Each Method
-This is After All Method

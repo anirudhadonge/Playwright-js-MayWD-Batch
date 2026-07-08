@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","22645","Handle Basic Authentication test level","","Wed Jul 01 08:49:17 IST 2026","failed","Wed Jul 01 08:49:40 IST 2026","","Actions.spec.js","",""
-"","4956","@smoke New Page test","","Wed Jul 01 08:49:17 IST 2026","passed","Wed Jul 01 08:49:22 IST 2026","","Actions.spec.js","",""
-"","1335","@smoke @Regression Browser invoking test","","Wed Jul 01 08:49:17 IST 2026","passed","Wed Jul 01 08:49:18 IST 2026","","Actions.spec.js","",""
