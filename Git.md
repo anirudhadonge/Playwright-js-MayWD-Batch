@@ -39,3 +39,6 @@ git delete -d <branch name>
 2. Push: It will push the code from your local branch to the Remote Branch.
 main ----> origin/main
 Staging Area --- Commit --- Push
+
+
+## Resolve Conflict
