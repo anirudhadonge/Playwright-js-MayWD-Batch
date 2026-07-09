@@ -55,7 +55,7 @@ test.describe("Fill test and select Options are in a group", async () => {
     await page.waitForTimeout(3000);
   });
 
-  test.only("Authencation test", async ({ page }) => {
+  test("Authencation test", async ({ page }) => {
       await test.step("Navigate to Login page",async()=>{
         await page.locator("[href='/login']").click();
     })

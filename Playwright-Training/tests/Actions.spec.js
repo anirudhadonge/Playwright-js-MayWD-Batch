@@ -198,7 +198,7 @@ test("Handle Basic Authentication test level",{
 /**
  * Click a link---> Internally triggers a Page Event ---> Page
  */
-test.only("@smoke New Page test",async({context})=>{
+test("@smoke New Page test",async({context})=>{
  const page = await context.newPage();
  let basePage = new Basepage(page);
  await basePage.goto("https://the-internet.herokuapp.com/");

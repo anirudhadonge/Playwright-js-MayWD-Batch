@@ -30,7 +30,7 @@ test("Get all booking IDs", async ({ request }) => {
   console.log(details);
 });
 
-test.only("Add a new Booking", async ({ request }) => {
+test("Add a new Booking", async ({ request }) => {
   console.log(process.env.API_URL + enpoint.CreateBooking);
   // const response = await request.post(
   //   process.env.API_URL + enpoint.CreateBooking,

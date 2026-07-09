@@ -22,7 +22,7 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true, // Thread invocation On the file level and other is on the test level
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
+  forbidOnly:true,
   /* Retry on CI only */
   /* Opt out of parallel tests on CI. */
   
@@ -42,7 +42,7 @@ export default defineConfig({
     //   password: 'admin'
     // },
   
-    browserName: "firefox",
+    browserName: "chromium", // chromium, firefox, webkit
     //channel: "msedge", // msEdge, chrome use the Chromium engine.
     headless: false,
     viewport: null,
